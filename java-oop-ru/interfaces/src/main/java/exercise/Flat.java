@@ -1,29 +1,25 @@
 package exercise;
 
-import java.awt.desktop.AppReopenedEvent;
-import java.util.Date;
-import java.util.SplittableRandom;
-
 // BEGIN
 public class Flat implements Home {
     private double area;
-    private double balconsArea;
+    private double balconyArea;
     private int floor;
 
-    public Flat(double area, double balconsArea, int floor) {
+    public Flat(double area, double balconyArea, int floor) {
         this.area = area;
-        this.balconsArea = balconsArea;
+        this.balconyArea = balconyArea;
         this.floor = floor;
     }
 
     @Override
     public double getArea() {
-        return area + balconsArea;
+        return area + balconyArea;
     }
 
     @Override
     public String toString() {
-        return String.format("Квартира площадью %.2f метров на %d этаже", getArea(), floor);
+       return String.format("Квартира площадью %.1f метров на %d этаже", getArea(), floor);
     }
 
     @Override
