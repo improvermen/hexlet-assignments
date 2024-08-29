@@ -36,7 +36,7 @@ class FileKVTest {
 
     @Test
     public void testSetValue() {
-        // Устанавливаем новое значение
+
         fileKV.set("key", "value");
 
         // Проверяем установленное значение
