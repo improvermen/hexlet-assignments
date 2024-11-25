@@ -7,15 +7,14 @@ public final class App {
     public static Javalin getApp() {
 
         // BEGIN
-        Javalin app = Javalin.create();
-            app.get("/phones", ctx -> {
-            List<String> phones = Data.getPhones();
-            ctx.json(phones);
+        var app = Javalin.create(config -> {
+            config.bundledPlugins.enableDevLogging();
         });
-
+        app.get("/phones", ctx -> {
+            ctx.json(Data.getPhones());
+        });
         app.get("/domains", ctx -> {
-            List<String> domains = Data.getDomains();
-            ctx.json(domains);
+            ctx.json(Data.getDomains());
         });
 
         return app;
